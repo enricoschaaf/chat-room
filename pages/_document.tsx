@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta name="description" content="Meta description" />
+          <meta name="description" content="Chat Room" />
           <meta name="theme-color" content="#f4f5f7" />
           <link rel="icon" type="image/svg+xml" href="favicon.svg" />
           <link
@@ -16,7 +16,7 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           />
         </Head>
-        <body className="bg-gray-100 text-gray-900">
+        <body className="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-50">
           <Main />
           <NextScript />
         </body>
