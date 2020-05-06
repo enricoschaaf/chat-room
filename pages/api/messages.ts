@@ -13,8 +13,8 @@ const pusher = new Pusher({
 })
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { username, message } = JSON.parse(req.body)
-  pusher.trigger("presence-chat-room", "message", { username, message })
-  await prisma.message.create({ data: { username, message } })
-  res.end()
+  const messages = await prisma.message.findMany({
+    select: { username: true, message: true }
+  })
+  res.json({ data: messages })
 }
